@@ -51,7 +51,7 @@ const movies = [
       title: 'The Lord of the Rings: The Return of the King',
       year: 2003,
       director: 'Peter Jackson',
-      poster: 'https://m.media-amazon.com/images/M/MV5BYWY1ZWQ5YjMtMDE0MS00NWIzLWE1M2YtODYzYTk2OTNlYWZmXkEyXkFqcGdeQXVyNDUyOTg3Njg@._V1_UX182_CR0,0,182,268_AL_.jpg',
+      poster: 'https://images.moviesanywhere.com/45bc0ec075bfc0b4d8f184a7cc5bf993/876ed805-83b1-4387-b0d0-62d08c36536d.jpg',
       metacritic: 94,
       Oscar: true,
     },

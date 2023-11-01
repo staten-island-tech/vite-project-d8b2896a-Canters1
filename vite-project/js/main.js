@@ -1,32 +1,59 @@
 import {movies} from  "./arrays.js" 
 const domselectors = {
     flexwrapper : document.querySelector(".flex-wrapper"),
-    oscarswitch : document.querySelector("#Oscar")
+    oscarswitch : document.querySelector("#Oscar"),
+    yearswitch : document.querySelector("#year"),
+    metaswitch : document.querySelector("#meta")
 }
-
-domselectors.oscarswitch.addEventListener("click", updateDisplay);
-function updateDisplay() {
-    if(domselectors.oscarswitch.checked===true){
-        console.log("test")
-        return true
-    }
-}
-
-
-
 
 let filteredmovies=movies
+let oscarswitch
+let yearswitch
+let metaswitch
+
+function updateDisplay() {
+    oscarswitch=false
+    yearswitch=false
+    metaswitch=false
+    if(domselectors.oscarswitch.checked===true){
+        console.log("updateoscarswitchchecked")
+        oscarswitch=true
+    }
+    if(domselectors.yearswitch.checked===true){
+        console.log("updateyearswitchchecked")
+        yearswitch=true
+    }
+    if(domselectors.metaswitch.checked===true){
+        console.log("updateyearswitchchecked")
+        metaswitch=true
+    }
+    
+    filtermovies()
+}
 
 function filtermovies() {
-    if (updateDisplay()==true){
+    filteredmovies = movies
+    if (oscarswitch===true){
         filteredmovies=filteredmovies.filter((movie)=>movie.Oscar==true)
+        console.log("oscarswitch is checked")
     }
+    if (yearswitch===true){
+        filteredmovies=filteredmovies.filter((movie)=>movie.year > 1999)
+        console.log("yearswitch is checked")
+    }
+    if (metaswitch===true){
+        filteredmovies=filteredmovies.filter((movie)=>movie.metacritic > 89)
+        console.log("yearswitch is checked")
+    }
+    makemovie()
 }
 
 
 function makemovie() {
-
-   return filteredmovies.forEach((movie)=>domselectors.flexwrapper.insertAdjacentHTML(
+    while (domselectors.flexwrapper.firstChild) {
+        domselectors.flexwrapper.removeChild(domselectors.flexwrapper.lastChild);
+      }
+    filteredmovies.forEach((movie)=>domselectors.flexwrapper.insertAdjacentHTML(
     "beforeend",
     `<div class = "card">
         <div class = "img-div">
@@ -43,5 +70,10 @@ function makemovie() {
         </div>
     </div>`
   ));
+  console.log(filteredmovies)
 }
-makemovie()
+document.addEventListener( "DOMContentLoaded", makemovie())
+
+domselectors.oscarswitch.addEventListener("click", updateDisplay);
+domselectors.yearswitch.addEventListener("click", updateDisplay);
+domselectors.metaswitch.addEventListener("click", updateDisplay);

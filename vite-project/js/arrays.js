@@ -83,7 +83,7 @@ const movies = [
       title: 'Forrest Gump',
       year: 1994,
       director: 'Robert Zemeckis',
-      poster: 'https://m.media-amaz on.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UY268_CR4,0,182,268_AL_.jpg',
+      poster: 'https://m.media-amazon.com/images/I/61F7SuvJ58L._AC_UF894,1000_QL80_.jpg',
       metacritic: 82,
       Oscar: true,
     },

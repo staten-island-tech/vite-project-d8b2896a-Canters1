@@ -3,8 +3,46 @@ const domselectors = {
     flexwrapper : document.querySelector(".flex-wrapper"),
     oscarswitch : document.querySelector("#Oscar"),
     yearswitch : document.querySelector("#year"),
-    metaswitch : document.querySelector("#meta")
+    metaswitch : document.querySelector("#meta"),
+    light: document.querySelector("#light"),
+    dark : document.querySelector("#dark")
 }
+let light=true
+let dark=false
+function switchtoggled(){
+    light=!light
+    dark=!dark
+    if (light){
+        domselectors.light.classList.add("toggled");
+        domselectors.dark.classList.remove("toggled");
+        domselectors.dark.classList.add("untoggled");
+        domselectors.light.classList.remove("untoggled");
+    }
+    else{
+        domselectors.dark.classList.add("toggled");
+        domselectors.light.classList.remove("toggled");
+        domselectors.light.classList.add("untoggled");
+        domselectors.dark.classList.remove("untoggled");
+    }
+}
+
+function changetheme(){
+    if 
+}
+domselectors.light.addEventListener("click", function(event) { 
+    if(!light){
+    switchtoggled();}
+    console.log("light")
+  });
+
+domselectors.dark.addEventListener("click", function(event) { 
+    if(!dark){
+            switchtoggled();}
+    console.log("dark")
+  });
+
+  
+
 
 let filteredmovies=movies
 let oscarswitch

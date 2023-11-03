@@ -77,3 +77,10 @@ h1 {
 .untoggled {
   background-color: rgb(224, 26, 19);
 }
+
+.lightmode{
+  background-color: antiquewhite;
+}
+.darkmode{
+  background-color: dimgray;
+}

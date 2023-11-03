@@ -24,10 +24,18 @@ function switchtoggled(){
         domselectors.light.classList.add("untoggled");
         domselectors.dark.classList.remove("untoggled");
     }
+    changetheme()
 }
 
 function changetheme(){
-    if 
+    if(light){
+        document.body.classList.add("lightmode");
+        document.body.classList.remove("darkmode");
+    }
+    else{
+        document.body.classList.add("darkmode");
+        document.body.classList.remove("lightmode");
+    }
 }
 domselectors.light.addEventListener("click", function(event) { 
     if(!light){
@@ -110,7 +118,7 @@ function makemovie() {
   ));
   console.log(filteredmovies)
 }
-document.addEventListener( "DOMContentLoaded", makemovie())
+document.addEventListener( "DOMContentLoaded", makemovie(), changetheme())
 
 domselectors.oscarswitch.addEventListener("click", updateDisplay);
 domselectors.yearswitch.addEventListener("click", updateDisplay);

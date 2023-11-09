@@ -1,20 +1,34 @@
 /* @import url(variables.css); */
 .dark{
-  --body:#12345
+  --primary: rgb(41, 41, 41);
+  --secondary: #f8efcf;
+  --shadow:var(--secondary);
 }
 
 .light {
-
+  --primary : antiquewhite;
+  --secondary: rgb(41, 41, 41);
+  --shadow:rgba(0, 0, 0, 0.2);
 }
-
 *{
   margin: 0;
   padding: 0;
 }
+
+body{
+  background-color: var(--primary);
+}
+
 h1 {
   padding: 10px;
   text-align: center;
+  color: var(--secondary);
 }
+
+label {
+  color: var(--secondary);
+}
+
 .flex-wrapper {
   display: flex;
   justify-content: space-evenly;
@@ -50,7 +64,7 @@ h1 {
   cursor: pointer;
   position: relative;
   background-color: antiquewhite;
-  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px 5px var(--shadow);
   margin-bottom:5rem;
   transition: transform 0.3s ease-in-out;
   display: flex;
@@ -86,9 +100,3 @@ h1 {
   background-color: rgb(224, 26, 19);
 }
 
-.lightmode{
-  background-color: antiquewhite;
-}
-.darkmode{
-  background-color: dimgray;
-}

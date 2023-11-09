@@ -29,12 +29,12 @@ function switchtoggled(){
 
 function changetheme(){
     if(light){
-        document.body.classList.add("lightmode");
-        document.body.classList.remove("darkmode");
+        document.body.classList.add("light");
+        document.body.classList.remove("dark");
     }
     else{
-        document.body.classList.add("darkmode");
-        document.body.classList.remove("lightmode");
+        document.body.classList.add("dark");
+        document.body.classList.remove("light");
     }
 }
 domselectors.light.addEventListener("click", function(event) { 

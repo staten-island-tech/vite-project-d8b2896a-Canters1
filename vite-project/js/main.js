@@ -50,46 +50,18 @@ domselectors.dark.addEventListener("click", function(event) {
   });
 
   
-
-
 let filteredmovies=movies
-let oscarswitch
-let yearswitch
-let metaswitch
-
-function updateDisplay() {
-    oscarswitch=false
-    yearswitch=false
-    metaswitch=false
-    if(domselectors.oscarswitch.checked===true){
-        console.log("updateoscarswitchchecked")
-        oscarswitch=true
-    }
-    if(domselectors.yearswitch.checked===true){
-        console.log("updateyearswitchchecked")
-        yearswitch=true
-    }
-    if(domselectors.metaswitch.checked===true){
-        console.log("updateyearswitchchecked")
-        metaswitch=true
-    }
-    
-    filtermovies()
-}
 
 function filtermovies() {
     filteredmovies = movies
-    if (oscarswitch===true){
+    if (domselectors.oscarswitch.checked===true){
         filteredmovies=filteredmovies.filter((movie)=>movie.Oscar==true)
-        console.log("oscarswitch is checked")
     }
-    if (yearswitch===true){
+    if (domselectors.yearswitch.checked===true){
         filteredmovies=filteredmovies.filter((movie)=>movie.year > 1999)
-        console.log("yearswitch is checked")
     }
-    if (metaswitch===true){
+    if (domselectors.metaswitch.checked===true){
         filteredmovies=filteredmovies.filter((movie)=>movie.metacritic > 89)
-        console.log("yearswitch is checked")
     }
     makemovie()
 }
@@ -116,10 +88,9 @@ function makemovie() {
         </div>
     </div>`
   ));
-  console.log(filteredmovies)
 }
 document.addEventListener( "DOMContentLoaded", makemovie(), changetheme())
 
-domselectors.oscarswitch.addEventListener("click", updateDisplay);
-domselectors.yearswitch.addEventListener("click", updateDisplay);
-domselectors.metaswitch.addEventListener("click", updateDisplay);
+domselectors.oscarswitch.addEventListener("click", filtermovies);
+domselectors.yearswitch.addEventListener("click", filtermovies);
+domselectors.metaswitch.addEventListener("click", filtermovies);
